@@ -1,5 +1,7 @@
 package _02_introduction_to_polymorphism;
 
+import java.util.ArrayList;
+
 // Read through the program below including the comments.
 
 class Animal {
@@ -65,6 +67,18 @@ public class Runner {
 		animal = new Fish();
 		Fish f = (Fish)animal;
 		f.speak(); //prints "Gurgle Gurgle Gurgle"
+		
+		
+		ArrayList<Animal> animals = new ArrayList<Animal>();
+		animals.add(new Fish());
+		animals.add(new Dog());
+		animals.add(new Fish());
+		animals.add(new Bird());
+		animals.add(new Animal());
+		System.out.println("ex.");
+		for (Animal animal2 : animals) {
+			animal2.speak();
+		}
 		
 	}
 }
