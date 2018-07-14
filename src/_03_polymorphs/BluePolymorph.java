@@ -2,6 +2,7 @@ package _03_polymorphs;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.event.KeyEvent;
 
 public class BluePolymorph extends Polymorph{
 
@@ -12,7 +13,9 @@ public class BluePolymorph extends Polymorph{
 	@Override
 	public void draw(Graphics g) {
 		g.setColor(Color.blue);
-		g.fillRect(x, y, 50, 50);
+		g.fillRect(x, y, h, w);
 	}
+
+
 	
 }
