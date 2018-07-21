@@ -5,13 +5,15 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseMotionListener;
 import java.util.ArrayList;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
-public class PolymorphWindow extends JPanel implements ActionListener{
+public class PolymorphWindow extends JPanel implements ActionListener, MouseMotionListener{
     public static final int WIDTH = 900;
     public static final int HEIGHT = 600;
     
@@ -25,6 +27,10 @@ public class PolymorphWindow extends JPanel implements ActionListener{
    MovingMorph m1= new MovingMorph(x, y+10);
    RedMorph r1= new RedMorph(x+10, y);
    MovingMorph m2= new MovingMorph(x, y-10);
+   
+   CircleMorph cm= new CircleMorph(x, y, 30);
+   
+   MouseMorph mm= new MouseMorph(x+100, y+100);
    
     public static void main(String[] args) {
    	 new PolymorphWindow().buildWindow();
@@ -46,6 +52,7 @@ public class PolymorphWindow extends JPanel implements ActionListener{
    	polys.add(m1);
    	polys.add(r1);
    	polys.add(m2);
+   	this.addMouseMotionListener(mm);
    	
    	
    	
@@ -59,12 +66,21 @@ public class PolymorphWindow extends JPanel implements ActionListener{
    	 g.setColor(Color.LIGHT_GRAY);
    	 g.fillRect(0, 0, 500, 500);
    	
+   	 //Circle morph
+   	 //cm.draw(g);
+   	// cm.update();
+   	 
+   	 //Mouse Morph
+   	 mm.draw(g);
+   	 mm.update();
+   	 
+   	 //Array of morphs
    	 //draw polymorph
-   	for (Polymorph polymorph : polys) {
-		polymorph.draw(g);
-		polymorph.update();
+   //	for (Polymorph polymorph : polys) {
+	//	polymorph.draw(g);
+	//	polymorph.update();
 		
-	}
+	//}
    	
    	 
    	 
@@ -76,4 +92,16 @@ public class PolymorphWindow extends JPanel implements ActionListener{
    	
    	 
     }
+
+	@Override
+	public void mouseDragged(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseMoved(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
 }
