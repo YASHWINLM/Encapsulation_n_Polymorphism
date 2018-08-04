@@ -27,8 +27,10 @@ public class PolymorphWindow extends JPanel implements ActionListener, MouseMoti
    MovingMorph m1= new MovingMorph(x, y+10);
    RedMorph r1= new RedMorph(x+10, y);
    MovingMorph m2= new MovingMorph(x, y-10);
-   
+   ImageMorph im = new ImageMorph(x, y);
    CircleMorph cm= new CircleMorph(x, y, 30);
+   
+   JOPMorph jm= new JOPMorph(x, y);
    
    MouseMorph mm= new MouseMorph(x+100, y+100);
    
@@ -53,6 +55,7 @@ public class PolymorphWindow extends JPanel implements ActionListener, MouseMoti
    	polys.add(r1);
    	polys.add(m2);
    	this.addMouseMotionListener(mm);
+   	this.addMouseListener(jm);
    	
    	
    	
@@ -71,8 +74,15 @@ public class PolymorphWindow extends JPanel implements ActionListener, MouseMoti
    	// cm.update();
    	 
    	 //Mouse Morph
-   	 mm.draw(g);
-   	 mm.update();
+   	// mm.draw(g);
+   	// mm.update();
+   	 
+   	 
+   	 //ImageMorph
+   	 //im.draw(g);
+   	 
+   	 
+   	 jm.draw(g);
    	 
    	 //Array of morphs
    	 //draw polymorph

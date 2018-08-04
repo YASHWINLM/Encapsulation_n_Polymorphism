@@ -41,7 +41,7 @@ public class MouseMorph extends Polymorph implements MouseMotionListener {
 		
 		 mouseY=e.getY();
 		 mouseX=e.getX();
-		 System.out.println("mouse position");
+		 
 	}
 
 }
