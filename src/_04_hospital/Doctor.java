@@ -8,8 +8,13 @@ public class Doctor {
 	ArrayList<Patient> AssignedPatients= new ArrayList<Patient>();
 	
 	public Object performsSurgery() {
-		// TODO Auto-generated method stub
-		return null;
+	Hospital h = new Hospital();
+	Doctor s= new Surgeon();
+	if(h.getDoctors().equals(s)) {
+		return true;
+		
+	}
+		return false;
 	}
 
 	public Object makesHouseCalls() {
@@ -22,13 +27,16 @@ public class Doctor {
 		AssignedPatients.add(patient);
 	}
 
-	public List<Doctor> getPatients() {
+	public List<Patient> getPatients() {
 		// TODO Auto-generated method stub
-		return null;
+		
+		return AssignedPatients;
 	}
 
 	public void doMedicine() {
-		// TODO Auto-generated method stub
+		for (int i = 0; i < AssignedPatients.size(); i++) {
+			this.getPatients().get(i).caredForInt+=1;
+		}
 		
 	}
 

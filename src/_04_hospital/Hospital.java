@@ -34,11 +34,11 @@ public class Hospital {
 		
 	}
 
-	public List<Doctor> getPatients() {
+	public List<Patient> getPatients() {
 		// TODO Auto-generated method stub
-	
 		
-		return null;
+		
+		return patients;
 	}
 
 	public void assignPatientsToDoctors() {

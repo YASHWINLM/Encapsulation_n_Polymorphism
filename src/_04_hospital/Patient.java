@@ -2,13 +2,19 @@ package _04_hospital;
 
 public class Patient {
 
-	public Object feelsCaredFor() {
+	 int caredForInt= 0;
+	
+	public boolean feelsCaredFor() {
 		// TODO Auto-generated method stub
-		return null;
+		if (caredForInt>0) {
+			return true;
+		}
+		
+		return false;
 	}
 
 	public void checkPulse() {
-		// TODO Auto-generated method stub
+		caredForInt+=1;
 		
 	}
 
