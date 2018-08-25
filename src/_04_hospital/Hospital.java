@@ -43,12 +43,26 @@ public class Hospital {
 
 	public void assignPatientsToDoctors() {
 		// TODO Auto-generated method stub
-		
+		int x=-3;
 		for (int i = 0; i < doctors.size(); i++) {
-			for (int j = 0; j < patients.size(); j++) {
-				for (int j2 = 0; j2 < 3; j2++) {
-					doctors.get(i).assignPatient(patients.get(j));
-				}
+			if (x<0) {
+				x+=3;
+			}
+			else if (x==0) {
+				x+=3;
+			}
+			else if (x==3) {
+				x+=3;
+			}
+			for (int j =x; j < patients.size(); j++) {
+					try {
+						doctors.get(i).assignPatient(patients.get(j));
+					} catch (DoctorFullException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+						break;
+					}
+				
 			}
 			
 			

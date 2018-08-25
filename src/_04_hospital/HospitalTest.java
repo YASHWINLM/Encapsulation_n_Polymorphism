@@ -92,14 +92,35 @@ public class HospitalTest extends TestCase {
 		} catch (DoctorFullException dfe) {
 			assertTrue(true);
 		}
-assertTrue(testDoctor.getPatients().size() == 3);
+		assertTrue(testDoctor.getPatients().size() == 3);
 	}
 
 	public void test8Patients() throws Exception {
 		// TODO: add 3 doctors to hospital
-
+		Surgeon s = new Surgeon();
+		GeneralPractitioner gp= new  GeneralPractitioner();
+		GeneralPractitioner gp2= new  GeneralPractitioner();
+		testHospital.addDoctor(s);
+		testHospital.addDoctor(gp);
+		testHospital.addDoctor(gp2);
 		// TODO: add 8 patients to hospital
-
+		Patient p = new Patient();
+		Patient p2 = new Patient();
+		Patient p3 = new Patient();
+		Patient p4 = new Patient();
+		Patient p5 = new Patient();
+		Patient p6 = new Patient();
+		Patient p7 = new Patient();
+		Patient p8 = new Patient();
+		
+		testHospital.addPatient(p);
+		testHospital.addPatient(p2);
+		testHospital.addPatient(p3);
+		testHospital.addPatient(p4);
+		testHospital.addPatient(p5);
+		testHospital.addPatient(p6);
+		testHospital.addPatient(p7);
+		testHospital.addPatient(p8);
 		// hospital assigns patients to doctors
 		testHospital.assignPatientsToDoctors();
 		// hospital.getDoctors shows doctors have 3, 3, 2 patients

@@ -7,24 +7,37 @@ public class Doctor {
 
 	ArrayList<Patient> AssignedPatients= new ArrayList<Patient>();
 	
-	public Object performsSurgery() {
-	Hospital h = new Hospital();
-	Doctor s= new Surgeon();
-	if(h.getDoctors().equals(s)) {
-		return true;
-		
-	}
+	public boolean performsSurgery() {
+
+		int x=0;
+		if (this instanceof Surgeon) {
+			x+=1;
+		}
+		if (x>0) {
+			return true;
+		}
 		return false;
 	}
 
-	public Object makesHouseCalls() {
+	public boolean makesHouseCalls() {
 		// TODO Auto-generated method stub
-		return null;
+		int x=0;
+		if (this instanceof GeneralPractitioner) {
+			x+=1;
+		}
+		if (x>0) {
+			return true;
+		}
+		return false;
 	}
 
-	public void assignPatient(Patient patient) {
+	public void assignPatient(Patient patient) throws DoctorFullException {
 		// TODO Auto-generated method stub
+		if (this.getPatients().size()>=3) {
+			throw new DoctorFullException();
+		}
 		AssignedPatients.add(patient);
+		
 	}
 
 	public List<Patient> getPatients() {
